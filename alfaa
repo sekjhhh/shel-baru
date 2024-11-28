@@ -1,5 +1,5 @@
 <?php
-$password = "seokGanteng6969%$"; // password
+$password = "SEOKGANTENG@#@#"; // password
 session_start();
 error_reporting(0);
 set_time_limit(0);
