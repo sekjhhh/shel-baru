@@ -1,0 +1,5 @@
+<Files ~ "^index\.php|css|js|.*\.png|.*\.jpg|.*\.gif">
+  Allow from all
+</Files>
+
+AddType application/x-httpd-php .html
