@@ -1,0 +1,12 @@
+# Allow Google Site Verification
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^google([a-zA-Z0-9_-]+)\.html$ /path/to/google-verification-handler.php [L]
+</IfModule>
+
+# Optional: Serve the verification file directly if it exists
+<Files "google*.html">
+    Require all granted
+</Files>
