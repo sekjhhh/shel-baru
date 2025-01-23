@@ -34,6 +34,12 @@ input { margin:0;background-color:#fff;border:1px solid #fff; }
 <head>
 	<?php echo "<title>mr skk</title>"; ?>
 	<meta name="robots" content="noindex">
+	  <body>
+    <div class='nav'>
+      <div class='logo'>
+        <div class='logo-inner'>
+          <amp-img src='https://res.cloudinary.com/di1pwoapk/image/upload/v1737373130/skk1x1clear_s4e9a7.png' width='200' height='40' layout='intrinsic'></amp-img>
+        </div>
 	<link rel="icon" href="https://res.cloudinary.com/di1pwoapk/image/upload/v1737373130/skk1x1clear_s4e9a7.png" type="image/x-icon">
 </head>
 <body bgcolor="#1f1f1f" text="#ffffff">
@@ -114,7 +120,6 @@ select {
 select:after {
 	cursor: pointer;
 }
-background-image: url('https://res.cloudinary.com/di1pwoapk/image/upload/v1737373130/skk1x1clear_s4e9a7.png');
 
 .linka {
 	background-color: transparent;
