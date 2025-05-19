@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hacked By k3nzou</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Mr K3nzou">
+    <meta name="description" content="Fear Has No Place In Freedom">
+    <meta http-equiv="content-type" content="text/html">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: "Courier New";
+            color: white;
+            text-align: center;
+        }
+
+        #bgvid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .flash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            opacity: 0;
+            z-index: 9999;
+            pointer-events: none;
+            transition: opacity 0.1s ease-in-out;
+        }
+
+        img {
+            width: 250px;
+            height: auto;
+        }
+
+        .red-text {
+            color: red;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body onclick="playAudio();">
+
+    <!-- MP4 Video Background (Dipindahkeun ka luhur) -->
+    <video autoplay muted loop id="bgvid">
+        <source src="https://res.cloudinary.com/dfx14z8lw/video/upload/v1747682962/dark-tale-of-itachi.1920x1080_pcdl8g.mp4" type="video/mp4">
+    </video>
+
+    <audio id="sec">
+        <source src="" type="audio/mpeg">
+    </audio>
+    
+    <audio id="thunder">
+        <source src="https://k.top4top.io/m_3426jpbqq1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function playAudio() {
+            document.getElementById("sec").play();
+            playThunder();
+        }
+
+        function playThunder() {
+            var thunder = document.getElementById("thunder");
+            thunder.currentTime = 0;
+            thunder.play();
+            flashEffect();
+        }
+
+        function flashEffect() {
+            var flash = document.createElement("div");
+            flash.className = "flash";
+            document.body.appendChild(flash);
+
+            setTimeout(() => { flash.style.opacity = "1"; }, 50);
+            setTimeout(() => { flash.style.opacity = "0"; }, 200);
+            setTimeout(() => { document.body.removeChild(flash); }, 300);
+        }
+    </script>
+
+    <div>
+        <br><br>
+        <img src="https://1.bp.blogspot.com/-txnCag9Z9jM/UuKj2FcKOSI/AAAAAAAAAuY/ExDFUIUMyk0/s1600/caveirapirataprataimagek.png">
+        <br><br>
+        <b><font size="7" color="white">Hacked By <font color="red">K3NZOU</b></font></font>
+        <br><br>
+        <b><font size="6" color="white">"Bermimpilah yang besar dan selalu berani untuk gagal."<font color="red"><br><br>SKK GRUP</b></br></font></font>
+        <font size="8" color="red">^-^</font>
+        <p><a href="https://t.me/skkteam2025" target="_blank">t.me/skkteam2025</a></p>
+    </div>
+
+    <div class="greetings">
+        <h2></h2>
+        <p>|SKK GRUP|</p>
+    </div>
+
+</body>
+</html>
